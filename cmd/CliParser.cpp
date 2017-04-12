@@ -5,8 +5,10 @@
 #include "CliParser.h"
 #include <iostream>
 
-namespace ez {
-    namespace cli {
+namespace ez
+{
+    namespace cmd
+    {
         using namespace std;
 
         CliParser::CliParser()

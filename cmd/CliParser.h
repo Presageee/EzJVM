@@ -4,17 +4,20 @@
 #ifndef EZJVM_CMD_H
 #define EZJVM_CMD_H
 
-#endif //EZJVM_CMD_H
+
 
 #include <string>
 #include <map>
 #include <stdint.h>
 
-namespace ez {
-    namespace cli {
+namespace ez
+{
+    namespace cmd
+    {
     using namespace std;
 
-        class CliParser {
+        class CliParser
+        {
         public :
             CliParser();
 
@@ -79,3 +82,4 @@ namespace ez {
     }//end of cli
 }//end of ez
 
+#endif //EZJVM_CMD_H
