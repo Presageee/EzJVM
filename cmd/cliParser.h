@@ -16,12 +16,12 @@ namespace ez
     {
     using namespace std;
 
-        class CliParser
+        class cliParser
         {
         public :
-            CliParser();
+            cliParser();
 
-            virtual ~CliParser();
+            virtual ~cliParser();
 
             int parse(int argc, char **argv);
 

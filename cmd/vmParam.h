@@ -7,18 +7,18 @@
 
 #include <string>
 #include <vector>
-#include "CliParser.h"
+#include "cliParser.h"
 
 namespace ez
 {
     namespace cmd
     {
         using namespace std;
-        class Param
+        class vmParam
         {
         public:
-            Param(const CliParser &cliParser);
-            virtual ~Param();
+            vmParam(const cliParser &cliParser);
+            virtual ~vmParam();
 
             const string &getClasspath() const;
 
@@ -33,6 +33,8 @@ namespace ez
             void setArgs(const vector<string> &args);
 
             int checkParam();
+
+            const string printUsage() const;
 
         private:
             string classpath;

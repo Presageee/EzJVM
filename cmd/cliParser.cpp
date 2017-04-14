@@ -2,8 +2,9 @@
 // Created by LJT on 17-4-12.
 //
 
-#include "CliParser.h"
+#include "cliParser.h"
 #include <iostream>
+
 
 namespace ez
 {
@@ -11,18 +12,18 @@ namespace ez
     {
         using namespace std;
 
-        CliParser::CliParser()
+        cliParser::cliParser()
         {
             lastErr[0] = '\0';
             properties.clear();
         }
 
-        CliParser::~CliParser()
+        cliParser::~cliParser()
         {
 
         }
 
-        int CliParser::parse(int argc, char **argv)
+        int cliParser::parse(int argc, char **argv)
         {
             string key = "";
             string value = "";
@@ -73,12 +74,12 @@ namespace ez
             return 0;
         }
 
-        void CliParser::print()
+        void cliParser::print()
         {
             map<string, string>::const_iterator it = begin();
             for (;it != end(); it++)
             {
-                cout << it->first << "=" << it->second << endl;
+                cout << it->first << " " << it->second << endl;
             }
         }
     }
