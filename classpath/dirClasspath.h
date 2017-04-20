@@ -32,9 +32,12 @@ namespace ez
                 string clazz;
                 clazz.append(dirPath)
                         .append(FILE_SEPARATOR)
-                        .append(clazzName);
-                        //.append(CLAZZ_SUFFIX);
-
+                        .append(clazzName)
+                        .append(CLAZZ_SUFFIX);
+                shared_ptr<unsigned char> data;
+                if (nullptr != (data = getClass(clazz))) {
+                    return data.get();
+                }
                 //read file
                 std::ifstream in(clazz, ios::in | ios::binary);
                 string errMsg;
@@ -43,7 +46,7 @@ namespace ez
                 string readSizeErrMsg;
                 ASSERTVMERR((size = getFileLength(clazz)),
                             BUILDMESSAGE3(readSizeErrMsg, "read ", clazz, " size error"));
-                shared_ptr<unsigned char> data = make_shared_array<unsigned char>(size);
+                data = make_shared_array<unsigned char>(size);
                 in.read((char *)data.get(), size);
                 classMap[clazzName] = data;
                 return data.get();

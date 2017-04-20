@@ -22,6 +22,11 @@ namespace ez
 
         static map<string, shared_ptr<unsigned char>> classMap;
 
+        inline shared_ptr<unsigned char> &getClass(const string& name)
+        {
+            classMap.end() != classMap.find(name) ? classMap.find(name)->second : nullptr;
+        }
+
         class classpath
         {
         public:

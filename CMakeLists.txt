@@ -11,5 +11,17 @@ set(SOURCE_FILES main.cpp cmd/cliParser.h
         classpath/classpath.h
         classpath/cpReader.h
         classpath/dirClasspath.h
-        classpath/zipClasspath.h)
+        classpath/zipClasspath.h
+        zip/ioapi.h
+        zip/ioapi.c
+        zip/unzip.c
+        zip/unzip.h)
+
+#head
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+#3rdpart static obj
+#[[link_directories(${PROJECT_SOURCE_DIR}/3rdparty)]]
+link_libraries(${PROJECT_SOURCE_DIR}/3rdparty/libz.a)
+
 add_executable(EzJVM ${SOURCE_FILES})

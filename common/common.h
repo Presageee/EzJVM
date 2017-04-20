@@ -44,6 +44,9 @@
 
 #define BUILDMESSAGE3(str, m1, m2, m3) str.append(m1).append(m2).append(m3)
 
+#define EXCEPTION_EXIT(str) std::cout << str << std::endl;\
+exit(0);
+
 //namespace ez
 //{
 //    namespace common

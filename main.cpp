@@ -3,7 +3,7 @@
 #include <cstring>
 #include "cmd/cliParser.h"
 #include "cmd/vmParam.h"
-#include "classpath/dirClasspath.h"
+#include "classpath/zipClasspath.h"
 
 using namespace ez;
 using namespace classpath;
@@ -19,9 +19,10 @@ void startVM(int args, char ** argv)
 
 int main(int args, char** argv) {
     ASSERTVMOK(0,"");
-
-        dirClasspath dirClasspath1("/home/sensetime/Desktop/");
-        cout << dirClasspath1.readClass("111.jpg") << endl;
+    classpath::zipClasspath zipClasspath1("/home/sensetime/Desktop/333.jpg.zip");
+    zipClasspath1.getFileInZip("", "333.jpg");
+    cout << endl;
+    zipClasspath1.getFileInZip("", "verify.db");
     startVM(args, argv);
     return 0;
 }
